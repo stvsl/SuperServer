@@ -14,10 +14,6 @@ SuperServerMainWindow::~SuperServerMainWindow()
   delete ui;
 }
 
-void SQLUtils::prepareIni(){
-
-}
-
 //服务器开/关
 void SuperServerMainWindow::on_ServerSwitch_clicked()
 {

@@ -11,7 +11,7 @@ QT_BEGIN_NAMESPACE
 namespace Ui { class SuperServerMainWindow; }
 QT_END_NAMESPACE
 
-class SuperServerMainWindow : public QMainWindow
+class SuperServerMainWindow : public QMainWindow, public SQLUtils
 {
   Q_OBJECT
 
