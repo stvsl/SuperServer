@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SuperServerMainWindow</class>
+ <widget class="QMainWindow" name="SuperServerMainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1080</width>
+    <height>720</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>SuperServer</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="layoutWidget2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>110</y>
+      <width>261</width>
+      <height>581</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QLabel" name="label_9">
+         <property name="text">
+          <string>连接列表</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_7">
+         <property name="text">
+          <string>当前连接数：</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="ConnectedNumber">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QListWidget" name="listWidget">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(241, 241, 241);</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Box</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <item>
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="layoutWidget3">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>10</y>
+      <width>791</width>
+      <height>681</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_4">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QLabel" name="label_8">
+           <property name="text">
+            <string>运行日志</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="LogClear">
+           <property name="text">
+            <string>清空</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="LogOutput">
+           <property name="text">
+            <string>导出</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QListWidget" name="listWidget_2">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(241, 241, 241);</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Box</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Plain</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <widget class="QLabel" name="label_11">
+           <property name="text">
+            <string>调试区</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_3">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QPushButton" name="ClearMissSocket">
+           <property name="text">
+            <string>清除异常socket</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="RecoverSQL">
+           <property name="text">
+            <string>还原数据库</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="SQLComparison">
+           <property name="text">
+            <string>数据库比对</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="SimulationReturn">
+           <property name="text">
+            <string>模拟返回</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="DataAnalysis">
+           <property name="text">
+            <string>数据解析</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="DataControl">
+           <property name="text">
+            <string>数据控制</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="LocalTest">
+           <property name="text">
+            <string>本地测试</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>261</width>
+      <height>94</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_5">
+     <item>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="1" column="1">
+        <widget class="QLabel" name="label_5">
+         <property name="text">
+          <string>关闭</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLabel" name="label_6">
+         <property name="text">
+          <string>关闭</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string>IP运行模式：</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>端口号：</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>服务器状态：</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>关闭</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_5">
+       <item>
+        <widget class="QPushButton" name="ServerSwitch">
+         <property name="text">
+          <string>开启服务器</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="SQLSwitch">
+         <property name="text">
+          <string>连接数据库</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="SafeDebug">
+         <property name="text">
+          <string>启用安全调试</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1080</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>服务器</string>
+    </property>
+    <addaction name="ServerSetting"/>
+    <addaction name="RunningLogSetting"/>
+    <addaction name="InputServiceConfig"/>
+    <addaction name="OutputServiveConfig"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>数据库</string>
+    </property>
+    <addaction name="ConnectSQL"/>
+    <addaction name="DisconnectSQL"/>
+    <addaction name="separator"/>
+    <addaction name="SQLSetting"/>
+    <addaction name="SQLAssistant"/>
+    <addaction name="SQLDebug"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="menu_3">
+    <property name="title">
+     <string>网络</string>
+    </property>
+    <addaction name="action_4"/>
+    <addaction name="action_5"/>
+   </widget>
+   <widget class="QMenu" name="menu_4">
+    <property name="title">
+     <string>帮助</string>
+    </property>
+    <addaction name="FunctionDescription"/>
+    <addaction name="VersionInformation"/>
+    <addaction name="AboutThis"/>
+    <addaction name="AboutDeveloper"/>
+   </widget>
+   <widget class="QMenu" name="menu_5">
+    <property name="title">
+     <string>配置</string>
+    </property>
+    <addaction name="action"/>
+    <addaction name="InputSoftwareSetting"/>
+    <addaction name="OutputSoftwareSetting"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_2"/>
+   <addaction name="menu_3"/>
+   <addaction name="menu_5"/>
+   <addaction name="menu_4"/>
+  </widget>
+  <action name="ServerSetting">
+   <property name="text">
+    <string>服务器设置</string>
+   </property>
+  </action>
+  <action name="RunningLogSetting">
+   <property name="text">
+    <string>运行日志设置</string>
+   </property>
+  </action>
+  <action name="InputServiceConfig">
+   <property name="text">
+    <string>导入服务器设置</string>
+   </property>
+   <property name="toolTip">
+    <string>导入服务器设置</string>
+   </property>
+  </action>
+  <action name="ConnectSQL">
+   <property name="text">
+    <string>连接数据库</string>
+   </property>
+  </action>
+  <action name="DisconnectSQL">
+   <property name="text">
+    <string>断开数据库</string>
+   </property>
+  </action>
+  <action name="OutputServiveConfig">
+   <property name="text">
+    <string>导出服务器设置</string>
+   </property>
+   <property name="toolTip">
+    <string>导出服务器配置</string>
+   </property>
+  </action>
+  <action name="SQLDebug">
+   <property name="text">
+    <string>数据库调试</string>
+   </property>
+  </action>
+  <action name="SQLAssistant">
+   <property name="text">
+    <string>数据库辅助</string>
+   </property>
+  </action>
+  <action name="SQLSetting">
+   <property name="text">
+    <string>数据库设置</string>
+   </property>
+  </action>
+  <action name="FunctionDescription">
+   <property name="text">
+    <string>功能说明</string>
+   </property>
+  </action>
+  <action name="VersionInformation">
+   <property name="text">
+    <string>版本信息</string>
+   </property>
+  </action>
+  <action name="AboutThis">
+   <property name="text">
+    <string>关于此软件</string>
+   </property>
+  </action>
+  <action name="AboutDeveloper">
+   <property name="text">
+    <string>关于开发者</string>
+   </property>
+  </action>
+  <action name="action">
+   <property name="text">
+    <string>软件配置</string>
+   </property>
+  </action>
+  <action name="OutputSoftwareSetting">
+   <property name="text">
+    <string>导出软件配置</string>
+   </property>
+  </action>
+  <action name="InputSoftwareSetting">
+   <property name="text">
+    <string>导入软件配置</string>
+   </property>
+  </action>
+  <action name="action_4">
+   <property name="text">
+    <string>网络检查</string>
+   </property>
+  </action>
+  <action name="action_5">
+   <property name="text">
+    <string>网络调试工具</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
