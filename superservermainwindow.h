@@ -56,9 +56,14 @@ private slots:
   //本地测试（模拟客户端实现器）
   void on_LocalTest_clicked();
 
+  //
   void on_SQLSetting_triggered();
 
+  //
   void on_ConnectSQL_triggered();
+
+  //系统退出
+  void systemExit();
 
 private:
   Ui::SuperServerMainWindow *ui;
@@ -73,6 +78,7 @@ private:
   QList<QTcpSocket*> tcpClientList;
   //数据库设置界面
   SQLSETDialog sqlset;
+  SQLUtils *self;
 };
 #endif // SUPERSERVERMAINWINDOW_H
 

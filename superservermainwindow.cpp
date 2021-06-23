@@ -7,6 +7,11 @@ SuperServerMainWindow::SuperServerMainWindow(QWidget *parent)
   , ui(new Ui::SuperServerMainWindow)
 {
   ui->setupUi(this);
+  //加载初始化数据库
+  self = new SQLUtils;
+  //执行调用函数
+  self->prepareIni();
+
 }
 
 SuperServerMainWindow::~SuperServerMainWindow()
@@ -99,3 +104,8 @@ void SuperServerMainWindow::on_ConnectSQL_triggered()
 
 }
 
+//系统异常退出
+void SuperServerMainWindow::systemExit()
+{
+  close();
+}

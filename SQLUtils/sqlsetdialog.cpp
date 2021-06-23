@@ -19,11 +19,11 @@ void SQLSETDialog::on_sqlset_tryconnect_clicked()
 {   if(sqlstatus == false){
     /*数据库连接匹配*/
     if(ui->sqlset_SQLmodel->currentIndex() == 0 ){
-        db = QSqlDatabase::addDatabase("QMYSQL");
+        db = QSqlDatabase::addDatabase("QMYSQL","userDB");
       }else if(ui->sqlset_SQLmodel->currentIndex() == 1){
-        db = QSqlDatabase::addDatabase("QMYSQL");
+        db = QSqlDatabase::addDatabase("QMYSQL","userDB");
       }else if(ui->sqlset_SQLmodel->currentIndex() == 2){
-        db = QSqlDatabase::addDatabase("QSQLITE");
+        db = QSqlDatabase::addDatabase("QSQLITE","userDB");
       }
     if(ui->sqlset_hostname->text() != ""){
         db.setHostName(ui->sqlset_hostname->text());
@@ -53,6 +53,9 @@ void SQLSETDialog::on_sqlset_tryconnect_clicked()
       }
     }else{
       db.close();
+
+
+      db.removeDatabase(db.connectionName());
       sqlstatus = false;
       ui->sqlset_log->addItem("数据库已断开！");
       ui->sqlset_savesetting->setEnabled(false);
