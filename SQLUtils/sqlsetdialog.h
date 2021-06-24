@@ -7,6 +7,7 @@
 #include <QDebug>
 #include <QSqlQueryModel>
 #include <QMessageBox>
+#include "configutils.h"
 
 namespace Ui {
   class SQLSETDialog;
@@ -24,13 +25,13 @@ public:
 private:
   Ui::SQLSETDialog *ui;
   //外部数据库连接器
-  QSqlDatabase db;
+  QSqlDatabase *db;
   //保存查询结果
   QSqlQueryModel model;
   //数据库连接状态
   bool sqlstatus;
-  //
-  QString nextreadtable;
+  //配置管理器
+  Configutils configutils;
 
 private slots:
   //尝试连接
@@ -46,6 +47,8 @@ private slots:
 
   void on_sqlset_inquire_clicked();
 
+  void on_sqlset_savesetting_clicked();
+  void on_sqlset_deleteconfig_clicked();
 };
 
 #endif // SQLSETDIALOG_H

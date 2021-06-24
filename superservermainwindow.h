@@ -2,9 +2,13 @@
 #define SUPERSERVERMAINWINDOW_H
 
 #include <QMainWindow>
-//数据库处理工具
+//数据库设置
 #include "SQLUtils/sqlsetdialog.h"
+//网络管理器
 #include "NetWorkUtils/NetWorkUtils.h"
+#include "ui_superservermainwindow.h"
+//配置管理器
+#include "configutils.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class SuperServerMainWindow; }
@@ -75,8 +79,10 @@ private:
   quint16 port;
   //保存套接字列表的容器
   QList<QTcpSocket*> tcpClientList;
-  //数据库设置界面
+  //数据库设置界面对象
   SQLSETDialog sqlset;
+  //配置管理器对象
+  Configutils configutils;
 };
 #endif // SUPERSERVERMAINWINDOW_H
 

@@ -10,12 +10,14 @@ CONFIG += c++11
 
 SOURCES += \
     SQLUtils/sqlsetdialog.cpp \
+    configutils.cpp \
     main.cpp \
     superservermainwindow.cpp\
     NetWorkUtils/NetWorkUtils.cpp
 
 HEADERS += \
     SQLUtils/sqlsetdialog.h \
+    configutils.h \
     superservermainwindow.h\
     NetWorkUtils/NetWorkUtils.h
 
