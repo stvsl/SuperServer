@@ -2,7 +2,11 @@
 #define SQLSETDIALOG_H
 
 #include <QDialog>
-#include "SQLUtils/sqlutils.h"
+#include <QSqlDatabase>
+#include <QSqlQuery>
+#include <QDebug>
+#include <QSqlQueryModel>
+#include <QMessageBox>
 
 namespace Ui {
   class SQLSETDialog;

@@ -5,13 +5,12 @@
 //数据库处理工具
 #include "SQLUtils/sqlsetdialog.h"
 #include "NetWorkUtils/NetWorkUtils.h"
-#include "SQLUtils/sqlutils.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class SuperServerMainWindow; }
 QT_END_NAMESPACE
 
-class SuperServerMainWindow : public QMainWindow, public SQLUtils
+class SuperServerMainWindow : public QMainWindow
 {
   Q_OBJECT
 
@@ -78,7 +77,6 @@ private:
   QList<QTcpSocket*> tcpClientList;
   //数据库设置界面
   SQLSETDialog sqlset;
-  SQLUtils *self;
 };
 #endif // SUPERSERVERMAINWINDOW_H
 

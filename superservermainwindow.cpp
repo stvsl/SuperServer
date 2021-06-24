@@ -1,17 +1,11 @@
 #include "superservermainwindow.h"
 #include "ui_superservermainwindow.h"
-#include "SQLUtils/sqlutils.h"
 
 SuperServerMainWindow::SuperServerMainWindow(QWidget *parent)
   : QMainWindow(parent)
   , ui(new Ui::SuperServerMainWindow)
 {
   ui->setupUi(this);
-  //加载初始化数据库
-  self = new SQLUtils;
-  //执行调用函数
-  self->prepareIni();
-
 }
 
 SuperServerMainWindow::~SuperServerMainWindow()
