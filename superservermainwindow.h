@@ -75,8 +75,6 @@ private:
   bool safeserverstatus;
   //创建服务器对象
   QTcpServer server;
-  //创建无符号整形16比特位的端口保存变量
-  quint16 port;
   //保存套接字列表的容器
   QList<QTcpSocket*> tcpClientList;
   //数据库设置界面对象

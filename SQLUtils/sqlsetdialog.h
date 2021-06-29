@@ -25,11 +25,13 @@ public:
 private:
   Ui::SQLSETDialog *ui;
   //外部数据库连接器
-  QSqlDatabase *db;
-  //保存查询结果
+  QSqlDatabase db;
+
   QSqlQueryModel model;
   //数据库连接状态
   bool sqlstatus;
+  //数据库操作器
+  QSqlQuery query;
   //配置管理器
   Configutils configutils;
 
@@ -44,11 +46,14 @@ private slots:
   void on_sqlset_cleartable_clicked();
   //删除表
   void on_sqlset_deletetable_clicked();
-
+  //查询表
   void on_sqlset_inquire_clicked();
-
+  //保存配置功能
   void on_sqlset_savesetting_clicked();
+  //删除配置功能
   void on_sqlset_deleteconfig_clicked();
+  //
+  void on_sqlset_simulationswitch_clicked();
 };
 
 #endif // SQLSETDIALOG_H

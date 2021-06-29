@@ -32,6 +32,10 @@ public:
   QString u_passwd;
   //数据库文件名
   QString u_DBFileName;
+
+  /*用户数据库操作功能配置存储*/
+  //数据库模拟器开关
+  QString db_simulationswitch;
 };
 
 #endif // CONFIGUTILS_H
