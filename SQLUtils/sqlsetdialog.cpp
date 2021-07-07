@@ -8,17 +8,31 @@ SQLSETDialog::SQLSETDialog(QWidget *parent) :
   /*初始化*/
   ui->setupUi(this);
   sqlstatus = false;
+  initialization();
+}
+
+SQLSETDialog::~SQLSETDialog()
+{
+  delete ui;
+}
+
+//初始化
+void SQLSETDialog::initialization()
+{
+  sqlstatus = false;
   ui->sqlset_SQLmodel->setCurrentText(configutils.u_DBStyle);
   ui->sqlset_hostname->setText(configutils.u_hostName);
   ui->sqlset_port->setText(configutils.u_port);
   ui->sqlset_username->setText(configutils.u_userName);
   ui->sqlset_passwd->setText(configutils.u_passwd);
   ui->sqlset_sqlfilename->setText(configutils.u_DBFileName);
-}
+  if(configutils.db_simulationswitch)
+    {
+      ui->sqlset_SQLmodel
+    }else{
 
-SQLSETDialog::~SQLSETDialog()
-{
-  delete ui;
+
+    }
 }
 
 //尝试连接/断开数据库
@@ -156,5 +170,5 @@ void SQLSETDialog::on_sqlset_deleteconfig_clicked()
 //数据虚拟器开关
 void SQLSETDialog::on_sqlset_simulationswitch_clicked()
 {
-  configutils
+
 }

@@ -4,6 +4,7 @@
 Configutils::Configutils()
 {
   DBIniReader();
+  simulationReader();
 }
 
 //读取用户数据库配置
@@ -28,4 +29,16 @@ void Configutils::DBIniWriter(QString DBStyle,QString hostName,QString port,QStr
   settings.setValue("DB/UserName",userName);
   settings.setValue("DB/Passwd",passwd);
   settings.setValue("DB/DBFileName",DBFileName);
+}
+
+void Configutils::simulationReader()
+{
+  QSettings settings(inipath,QSettings::IniFormat);
+  db_simulationswitch = settings.value("Sim/simulationmodel").Bool;
+}
+
+void Configutils::simulationWriter(bool status)
+{
+  QSettings settings(inipath,QSettings::IniFormat);
+  settings.setValue("Sin/simulationmodel",status);
 }

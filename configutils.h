@@ -3,6 +3,7 @@
 
 #include <QSettings>
 #include <QDebug>
+#include <QVector2D>
 
 class Configutils
 {
@@ -10,10 +11,17 @@ public:
   Configutils();
 
 public:
-  //配置读取器
+  /*DBIniReader与DBIniWriter用于读取和写入用户数据库配置文件*/
+  //用户数据库配置读取器
   void DBIniReader();
-  //配置写入器
+  //用户数据库配置写入器
   void DBIniWriter(QString DBStyle,QString hostName,QString port,QString userName,QString passwd,QString DBFileName);
+  /*simulationReader和simulationWriter用于读取和写入模拟数据的相关配置,同时使用重载实现*/
+  //模拟数据配置读取器
+  void simulationReader();
+  //模拟数据配置写入器
+  void simulationWriter();
+  void simulationWriter(bool status);
 
 private:
   QString inipath = "./config";
@@ -35,7 +43,9 @@ public:
 
   /*用户数据库操作功能配置存储*/
   //数据库模拟器开关
-  QString db_simulationswitch;
+  bool db_simulationswitch;
+  //模拟数据存放器
+  QVector <QString> simulationdata;
 };
 
 #endif // CONFIGUTILS_H

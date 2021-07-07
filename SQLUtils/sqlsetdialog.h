@@ -26,7 +26,7 @@ private:
   Ui::SQLSETDialog *ui;
   //外部数据库连接器
   QSqlDatabase db;
-
+  //查询请求器
   QSqlQueryModel model;
   //数据库连接状态
   bool sqlstatus;
@@ -36,6 +36,8 @@ private:
   Configutils configutils;
 
 private slots:
+  //初始化
+  void initialization();
   //尝试连接
   void on_sqlset_tryconnect_clicked();
   //创建表
@@ -52,7 +54,7 @@ private slots:
   void on_sqlset_savesetting_clicked();
   //删除配置功能
   void on_sqlset_deleteconfig_clicked();
-  //
+  //模拟数据开关
   void on_sqlset_simulationswitch_clicked();
 };
 
